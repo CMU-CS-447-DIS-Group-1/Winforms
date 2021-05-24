@@ -56,24 +56,34 @@
     <Compile Include="API\Connect.cs" />
     <Compile Include="API\Dishes.cs" />
     <Compile Include="API\Auth.cs" />
+    <Compile Include="GUI\Cashier\frm_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Cashier\frm_Main.Designer.cs">
+      <DependentUpon>frm_Main.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\frm_Main.cs">
+    <Compile Include="GUI\Manager\frm_Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\frm_Main.Designer.cs">
+    <Compile Include="GUI\Manager\frm_Main.Designer.cs">
       <DependentUpon>frm_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Object\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\Cashier\frm_Main.resx">
+      <DependentUpon>frm_Main.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frm_Login.resx">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\frm_Main.resx">
+    <EmbeddedResource Include="GUI\Manager\frm_Main.resx">
       <DependentUpon>frm_Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -84,6 +94,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -103,6 +114,7 @@
   <ItemGroup>
     <Content Include="GUI\Cashier\.gitignore" />
     <Content Include="GUI\Manager\.gitignore" />
+    <None Include="Resources\background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

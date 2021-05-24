@@ -1,5 +1,5 @@
 ﻿
-namespace Winforms.GUI
+namespace Winforms.GUI.Cashier
 {
     partial class frm_Main
     {
@@ -36,6 +36,8 @@ namespace Winforms.GUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.IsMdiContainer = true;
+            this.MaximizeBox = false;
             this.Name = "frm_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Restaurant Management";

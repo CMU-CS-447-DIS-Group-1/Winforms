@@ -12,7 +12,7 @@ namespace Winforms.API
     class Connect
     {
         HttpRequest request = new HttpRequest();
-        public string baseurl = "http://restaurant-api.local/api";
+        public string baseurl = "http://restaurant-api.test/api";
 
         public Connect()
         {
@@ -28,8 +28,6 @@ namespace Winforms.API
                     url = url + "?api_token=" + Properties.Settings.Default.AuthToken;
                 }
                 string html = request.Get(url).ToString();
-                MessageBox.Show(Properties.Settings.Default.AuthToken);
-                MessageBox.Show(html);
                 if (html != null)
                 {
                     dynamic result = JObject.Parse(@html);

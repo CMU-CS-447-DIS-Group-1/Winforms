@@ -24,9 +24,10 @@ namespace Winforms.API
             data["email"] = email;
             data["password"] = password;
             var result = request.Post(login_url, data);
-            if (result != null && result.api_token != null)
+            if (result != null && result["api_token"] != null)
             {
                 Properties.Settings.Default.AuthToken = result["api_token"].ToString();
+                Properties.Settings.Default.UserInfo = result["user_info"].ToString();
                 return true;
             }
             return false;
@@ -38,6 +39,7 @@ namespace Winforms.API
             if (result != null && result.code == 1)
             {
                 Properties.Settings.Default.AuthToken = null;
+                Properties.Settings.Default.UserInfo = null;
                 return true;
             }
             return false;

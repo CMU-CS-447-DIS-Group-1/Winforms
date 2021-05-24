@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Winforms.GUI
+namespace Winforms.GUI.Cashier
 {
     public partial class frm_Main : Form
     {

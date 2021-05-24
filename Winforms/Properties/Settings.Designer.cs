@@ -34,5 +34,17 @@ namespace Winforms.Properties {
                 this["AuthToken"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string UserInfo {
+            get {
+                return ((string)(this["UserInfo"]));
+            }
+            set {
+                this["UserInfo"] = value;
+            }
+        }
     }
 }
