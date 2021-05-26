@@ -12,7 +12,7 @@ namespace Winforms.API
     class Connect
     {
         HttpRequest request = new HttpRequest();
-        public string baseurl = "http://restaurant-api.test/api";
+        public string baseurl = "https://res.khodata.xyz/api";
 
         public Connect()
         {
