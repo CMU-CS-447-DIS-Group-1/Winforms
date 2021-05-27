@@ -13,6 +13,7 @@ namespace Winforms.API
     {
         HttpRequest request = new HttpRequest();
         public string baseurl = "https://res.khodata.xyz/api";
+        // public string baseurl = "http://restaurant-api.test/api";
 
         public Connect()
         {
@@ -28,12 +29,8 @@ namespace Winforms.API
                     url = url + "?api_token=" + Properties.Settings.Default.AuthToken;
                 }
                 string html = request.Get(url).ToString();
-                if (html != null)
-                {
-                    dynamic result = JObject.Parse(@html);
-                    return result;
-                }
-                return null;
+                dynamic result = JObject.Parse(@html);
+                return result;
             }
             catch (HttpException ex)
             {
@@ -115,9 +112,9 @@ namespace Winforms.API
         {
             try
             {
-                string html = request.Delete(url).ToString();
+                string html = request.Delete(url, ToRequestParams()).ToString();
                 dynamic result = JObject.Parse(@html);
-                if (result.code == 1) return true;
+                if (result != null && result.code == 1) return true;
                 return false;
             }
             catch (HttpException ex)

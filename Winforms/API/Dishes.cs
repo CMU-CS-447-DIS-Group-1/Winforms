@@ -18,12 +18,17 @@ namespace Winforms.API
 
         public dynamic index()
         {
-            return request.Get(url);
+            var data = request.Get(url);
+            return request.Get(url).data;
         }
 
-        public dynamic store()
+        public dynamic store(string name, double price, string description = "")
         {
-            var data = new Dictionary<string, string>();
+            var data = new Dictionary<string, string> {
+                {"name", name },
+                {"price", price.ToString() },
+                {"description", description }
+            };
             return request.Post(url, data);
         }
 
@@ -32,15 +37,19 @@ namespace Winforms.API
             return request.Get(url + "/" + id);
         }
 
-        public dynamic update(int id)
+        public dynamic update(int id, string name, double price, string description = "")
         {
-            var data = new Dictionary<string, string>();
-            return request.Put(url + " / " + id, data);
+            var data = new Dictionary<string, string> {
+                {"name", name },
+                {"price", price.ToString() },
+                {"description", description }
+            };
+            return request.Put(url + "/" + id.ToString(), data);
         }
 
         public bool destroy(int id)
         {
-            return request.Delete(url + " / " + id);
+            return request.Delete(url + "/" + id);
         }
     }
 }
