@@ -26,5 +26,26 @@ namespace Winforms.GUI.Manager
                 e.Cancel = true;
             }
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog;
+            dialog = MessageBox.Show("Bạn muốn thoát?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialog == DialogResult.No)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void dishManagementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["frm_DishManagement"] == null)
+            {
+                frm_DishManagement frm = new frm_DishManagement();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            else Application.OpenForms["frm_DishManagement"].Activate();
+        }
     }
 }
