@@ -12,9 +12,9 @@ namespace Winforms.API
     class Connect
     {
         RestClient client;
-        public string baseurl = "https://res.khodata.xyz/api";
+        // public string baseurl = "https://res.khodata.xyz/api";
+        public string baseurl = "http://restaurant-api.test/api";
         private bool debug = false;
-        // public string baseurl = "http://restaurant-api.test/api";
 
         public Connect()
         {
@@ -31,8 +31,7 @@ namespace Winforms.API
                 string html = response.Content;
                 if (debug == true)
                 {
-                    MessageBox.Show(html);
-                    MessageBox.Show(response.ResponseUri.ToString());
+                    MessageBox.Show("URL: " + response.ResponseUri.ToString() + "\nContent: \n" + html);
                 }
                 dynamic result = JObject.Parse(@html);
                 return result;
@@ -56,10 +55,8 @@ namespace Winforms.API
                 string html = response.Content;
                 if (debug == true)
                 {
-                    MessageBox.Show(html);
-                    MessageBox.Show(response.ResponseUri.ToString());
+                    MessageBox.Show("URL: " + response.ResponseUri.ToString() + "\nContent: \n" + html);
                 }
-
                 dynamic result = JObject.Parse(@html);
                 return result;
             }
@@ -80,10 +77,8 @@ namespace Winforms.API
                 string html = response.Content;
                 if (debug == true)
                 {
-                    MessageBox.Show(html);
-                    MessageBox.Show(response.ResponseUri.ToString());
+                    MessageBox.Show("URL: " + response.ResponseUri.ToString() + "\nContent: \n" + html);
                 }
-
                 dynamic result = JObject.Parse(@html);
                 return result;
             }
@@ -104,10 +99,8 @@ namespace Winforms.API
                 string html = response.Content;
                 if (debug == true)
                 {
-                    MessageBox.Show(html);
-                    MessageBox.Show(response.ResponseUri.ToString());
+                    MessageBox.Show("URL: " + response.ResponseUri.ToString() + "\nContent: \n" + html);
                 }
-
                 dynamic result = JObject.Parse(@html);
                 if (result != null && result.code == 1) return true;
                 return false;
