@@ -18,7 +18,6 @@ namespace Winforms.API
 
         public dynamic index()
         {
-            var data = request.Get(url);
             return request.Get(url).data;
         }
 

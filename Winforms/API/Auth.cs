@@ -14,8 +14,8 @@ namespace Winforms.API
 
         public Auth()
         {
-            login_url = request.baseurl + "/login";
-            logout_url = request.baseurl + "/logout";
+            login_url = "login";
+            logout_url = "logout";
         }
 
         public bool login(string email, string password)

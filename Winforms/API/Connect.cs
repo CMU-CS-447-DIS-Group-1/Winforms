@@ -4,122 +4,112 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Leaf.xNet;
+using RestSharp;
 using Newtonsoft.Json.Linq;
 
 namespace Winforms.API
 {
     class Connect
     {
-        HttpRequest request = new HttpRequest();
+        RestClient client;
         public string baseurl = "https://res.khodata.xyz/api";
+        private bool debug = false;
         // public string baseurl = "http://restaurant-api.test/api";
 
         public Connect()
         {
-            request.AddHeader(HttpHeader.Accept, "application/json");
+            client = new RestClient(baseurl);
+            client.AddDefaultHeader("Accept", "application/json");
         }
 
-        public dynamic Get(string url)
+        public dynamic Get(string url, Dictionary<string, string> data = null)
         {
             try
             {
-                if (Properties.Settings.Default.AuthToken != null)
+                var request = ToRequestParams(url, data);
+                var response = client.Get(request);
+                string html = response.Content;
+                if (debug == true)
                 {
-                    url = url + "?api_token=" + Properties.Settings.Default.AuthToken;
+                    MessageBox.Show(html);
+                    MessageBox.Show(response.ResponseUri.ToString());
                 }
-                string html = request.Get(url).ToString();
                 dynamic result = JObject.Parse(@html);
                 return result;
-            }
-            catch (HttpException ex)
-            {
-                MessageBox.Show(ex.Message, "Thông báo");
-                return null;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Thông báo");
                 return null;
-            }
-            finally
-            {
-                // Cleanup in the end if initialized
-                request?.Dispose();
             }
         }
 
         /**
          * Post, Store
          */
-        public dynamic Post(string url, Dictionary<string, string> data)
+        public dynamic Post(string url, Dictionary<string, string> data = null)
         {
             try
             {
-                string html = request.Post(url, ToRequestParams(data)).ToString();
+                var request = ToRequestParams(url, data);
+                var response = client.Post(request);
+                string html = response.Content;
+                if (debug == true)
+                {
+                    MessageBox.Show(html);
+                    MessageBox.Show(response.ResponseUri.ToString());
+                }
+
                 dynamic result = JObject.Parse(@html);
                 return result;
-            }
-            catch (HttpException ex)
-            {
-                MessageBox.Show(ex.Message, "Thông báo");
-                return null;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Thông báo");
                 return null;
             }
-            finally
-            {
-                // Cleanup in the end if initialized
-                request?.Dispose();
-            }
         }
 
-        /**
-         * Update
-         */
-        public dynamic Put(string url, Dictionary<string, string> data)
+        // Update
+        public dynamic Put(string url, Dictionary<string, string> data = null)
         {
             try
             {
-                string html = request.Put(url, ToRequestParams(data)).ToString();
+                var request = ToRequestParams(url, data);
+                var response = client.Put(request);
+                string html = response.Content;
+                if (debug == true)
+                {
+                    MessageBox.Show(html);
+                    MessageBox.Show(response.ResponseUri.ToString());
+                }
+
                 dynamic result = JObject.Parse(@html);
                 return result;
-            }
-            catch (HttpException ex)
-            {
-                MessageBox.Show(ex.Message, "Thông báo");
-                return null;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Thông báo");
                 return null;
             }
-            finally
-            {
-                // Cleanup in the end if initialized
-                request?.Dispose();
-            }
         }
 
-        /**
-         * Delete
-         */
+        // Delete
         public bool Delete(string url)
         {
             try
             {
-                string html = request.Delete(url, ToRequestParams()).ToString();
+                var request = ToRequestParams(url);
+                var response = client.Delete(request);
+                string html = response.Content;
+                if (debug == true)
+                {
+                    MessageBox.Show(html);
+                    MessageBox.Show(response.ResponseUri.ToString());
+                }
+
                 dynamic result = JObject.Parse(@html);
                 if (result != null && result.code == 1) return true;
-                return false;
-            }
-            catch (HttpException ex)
-            {
-                MessageBox.Show(ex.Message, "Thông báo");
                 return false;
             }
             catch (Exception ex)
@@ -127,22 +117,17 @@ namespace Winforms.API
                 MessageBox.Show(ex.Message, "Thông báo");
                 return false;
             }
-            finally
-            {
-                // Cleanup in the end if initialized
-                request?.Dispose();
-            }
         }
 
-        public RequestParams ToRequestParams(Dictionary<string, string> data = null)
+        public RestRequest ToRequestParams(string url, Dictionary<string, string> data = null)
         {
-            RequestParams output = new RequestParams { };
-            output["api_token"] = Properties.Settings.Default.AuthToken != null ? Properties.Settings.Default.AuthToken : "";
+            RestRequest output = new RestRequest(url);
+            if (Properties.Settings.Default.AuthToken != null) output.AddParameter("api_token", Properties.Settings.Default.AuthToken);
             if (data != null)
             {
                 foreach (KeyValuePair<string, string> param in data)
                 {
-                    output[param.Key] = param.Value;
+                    output.AddParameter(param.Key, param.Value);
                 }
             }
 
