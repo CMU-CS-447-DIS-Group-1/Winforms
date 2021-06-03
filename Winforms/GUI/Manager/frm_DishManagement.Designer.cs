@@ -37,11 +37,12 @@ namespace Winforms.GUI.Manager
             this.txt_Description = new System.Windows.Forms.RichTextBox();
             this.txt_ID = new System.Windows.Forms.TextBox();
             this.txt_Name = new System.Windows.Forms.TextBox();
-            this.txt_Price = new System.Windows.Forms.TextBox();
             this.btn_Delete = new System.Windows.Forms.Button();
             this.btn_Update = new System.Windows.Forms.Button();
             this.btn_Add = new System.Windows.Forms.Button();
+            this.txt_Price = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Price)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -50,6 +51,7 @@ namespace Winforms.GUI.Manager
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView1.ColumnHeadersHeight = 29;
             this.dataGridView1.Location = new System.Drawing.Point(12, 234);
             this.dataGridView1.MultiSelect = false;
@@ -58,14 +60,16 @@ namespace Winforms.GUI.Manager
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 204);
+            this.dataGridView1.Size = new System.Drawing.Size(776, 309);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(31, 25);
@@ -75,6 +79,7 @@ namespace Winforms.GUI.Manager
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.Control;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(201, 9);
             this.label2.Name = "label2";
@@ -86,6 +91,7 @@ namespace Winforms.GUI.Manager
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.Control;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(626, 9);
             this.label3.Name = "label3";
@@ -132,61 +138,65 @@ namespace Winforms.GUI.Manager
             this.txt_Name.Size = new System.Drawing.Size(349, 30);
             this.txt_Name.TabIndex = 7;
             // 
-            // txt_Price
-            // 
-            this.txt_Price.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_Price.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Price.Location = new System.Drawing.Point(688, 6);
-            this.txt_Price.Name = "txt_Price";
-            this.txt_Price.Size = new System.Drawing.Size(100, 30);
-            this.txt_Price.TabIndex = 8;
-            // 
             // btn_Delete
             // 
             this.btn_Delete.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_Delete.BackColor = System.Drawing.Color.Crimson;
             this.btn_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Delete.Location = new System.Drawing.Point(462, 182);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(82, 46);
             this.btn_Delete.TabIndex = 11;
             this.btn_Delete.Text = "Delete";
-            this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.UseVisualStyleBackColor = false;
             this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_Update
             // 
             this.btn_Update.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_Update.BackColor = System.Drawing.Color.Gold;
             this.btn_Update.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Update.Location = new System.Drawing.Point(360, 182);
             this.btn_Update.Name = "btn_Update";
             this.btn_Update.Size = new System.Drawing.Size(96, 46);
             this.btn_Update.TabIndex = 12;
             this.btn_Update.Text = "Update";
-            this.btn_Update.UseVisualStyleBackColor = true;
+            this.btn_Update.UseVisualStyleBackColor = false;
             this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
             // btn_Add
             // 
             this.btn_Add.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_Add.BackColor = System.Drawing.Color.Chartreuse;
             this.btn_Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Add.Location = new System.Drawing.Point(272, 182);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(82, 46);
             this.btn_Add.TabIndex = 13;
             this.btn_Add.Text = "Add";
-            this.btn_Add.UseVisualStyleBackColor = true;
+            this.btn_Add.UseVisualStyleBackColor = false;
             this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
+            // 
+            // txt_Price
+            // 
+            this.txt_Price.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_Price.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Price.Location = new System.Drawing.Point(688, 7);
+            this.txt_Price.Name = "txt_Price";
+            this.txt_Price.Size = new System.Drawing.Size(100, 30);
+            this.txt_Price.TabIndex = 14;
             // 
             // frm_DishManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 555);
+            this.Controls.Add(this.txt_Price);
             this.Controls.Add(this.btn_Add);
             this.Controls.Add(this.btn_Update);
             this.Controls.Add(this.btn_Delete);
-            this.Controls.Add(this.txt_Price);
             this.Controls.Add(this.txt_Name);
             this.Controls.Add(this.txt_ID);
             this.Controls.Add(this.txt_Description);
@@ -199,6 +209,7 @@ namespace Winforms.GUI.Manager
             this.Text = "Dish Management";
             this.Load += new System.EventHandler(this.frm_DishManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Price)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,9 +225,9 @@ namespace Winforms.GUI.Manager
         private System.Windows.Forms.RichTextBox txt_Description;
         private System.Windows.Forms.TextBox txt_ID;
         private System.Windows.Forms.TextBox txt_Name;
-        private System.Windows.Forms.TextBox txt_Price;
         private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.Button btn_Update;
         private System.Windows.Forms.Button btn_Add;
+        private System.Windows.Forms.NumericUpDown txt_Price;
     }
 }

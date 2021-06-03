@@ -27,6 +27,9 @@ namespace Winforms.GUI
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin đăng nhập!", "Thông báo");
             }
             else {
+                string login_text = btn_Login.Text;
+                btn_Login.Text = "Đang đăng nhập...";
+                btn_Login.Enabled = false;
                 if (auth.login(txt_Email.Text, txt_Password.Text))
                 {
                     MessageBox.Show("Đăng nhập thành công!", "Thông báo");
@@ -42,15 +45,19 @@ namespace Winforms.GUI
                         Cashier.frm_Main frm = new Cashier.frm_Main();
                         frm.ShowDialog();
                     }
-                    this.Show();
+                    btn_Login.Text = login_text;
+                    btn_Login.Enabled = true;
                     if (auth.logout())
                     {
                         MessageBox.Show("Đăng xuất thành công!", "Thông báo");
                     }
+                    this.Show();
                 }
                 else
                 {
                     MessageBox.Show("Đăng nhập thất bại!", "Thông báo");
+                    btn_Login.Text = login_text;
+                    btn_Login.Enabled = true;
                 }
             }
         }
