@@ -47,7 +47,7 @@ namespace Winforms.GUI.Manager
             this.đăngXuấtToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -79,8 +79,8 @@ namespace Winforms.GUI.Manager
             // toolStripStatusLabel_userName
             // 
             this.toolStripStatusLabel_userName.Name = "toolStripStatusLabel_userName";
-            this.toolStripStatusLabel_userName.Size = new System.Drawing.Size(106, 20);
-            this.toolStripStatusLabel_userName.Text = "Tên nhân viên: ";
+            this.toolStripStatusLabel_userName.Size = new System.Drawing.Size(88, 20);
+            this.toolStripStatusLabel_userName.Text = "Tên quản lí: ";
             // 
             // frm_Main
             // 
@@ -94,8 +94,7 @@ namespace Winforms.GUI.Manager
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frm_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Restaurant Management";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Text = "Quản lí nhà hàng";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Main_FormClosing);
             this.Load += new System.EventHandler(this.frm_Main_Load);
             this.menuStrip1.ResumeLayout(false);

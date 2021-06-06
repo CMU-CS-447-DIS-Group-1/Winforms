@@ -34,16 +34,6 @@ namespace Winforms.GUI.Manager
 
         private void dishManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-            if (Application.OpenForms["frm_DishManagement"] == null)
-            {
-                frm_DishManagement frm = new frm_DishManagement();
-                frm.MdiParent = this;
-                frm.Show();
-            }
-            else Application.OpenForms["frm_DishManagement"].Activate();
-            
-            /**
             if (Application.OpenForms["Dish.frm_Index"] == null)
             {
                 Dish.frm_Index frm = new Dish.frm_Index();
@@ -51,7 +41,7 @@ namespace Winforms.GUI.Manager
                 frm.Show();
             }
             else Application.OpenForms["frm_frm_Index"].Activate();
-            */
+            //
         }
 
         private void frm_Main_Load(object sender, EventArgs e)

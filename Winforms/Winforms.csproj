@@ -77,17 +77,17 @@
     <Compile Include="GUI\Cashier\frm_Main.Designer.cs">
       <DependentUpon>frm_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Cashier\frm_SelectTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Cashier\frm_SelectTable.Designer.cs">
+      <DependentUpon>frm_SelectTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Manager\Dish\frm_Create.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Manager\Dish\frm_Create.Designer.cs">
-      <DependentUpon>frm_Create.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Manager\Dish\frm_Index.cs">
       <SubType>Form</SubType>
@@ -95,11 +95,11 @@
     <Compile Include="GUI\Manager\Dish\frm_Index.Designer.cs">
       <DependentUpon>frm_Index.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Manager\frm_DishManagement.cs">
+    <Compile Include="GUI\Manager\Dish\frm_View.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Manager\frm_DishManagement.Designer.cs">
-      <DependentUpon>frm_DishManagement.cs</DependentUpon>
+    <Compile Include="GUI\Manager\Dish\frm_View.Designer.cs">
+      <DependentUpon>frm_View.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Manager\frm_Main.cs">
       <SubType>Form</SubType>
@@ -116,14 +116,11 @@
     <EmbeddedResource Include="GUI\frm_Login.resx">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Manager\Dish\frm_Create.resx">
-      <DependentUpon>frm_Create.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\Dish\frm_Index.resx">
       <DependentUpon>frm_Index.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Manager\frm_DishManagement.resx">
-      <DependentUpon>frm_DishManagement.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Manager\Dish\frm_View.resx">
+      <DependentUpon>frm_View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\frm_Main.resx">
       <DependentUpon>frm_Main.cs</DependentUpon>
