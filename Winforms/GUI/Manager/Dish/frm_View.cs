@@ -39,7 +39,7 @@ namespace Winforms.GUI.Manager.Dish
         private void btn_Delete_Click(object sender, EventArgs e)
         {
             DialogResult dialog;
-            dialog = MessageBox.Show("Bạn muốn xóa món ăn \"" + name + "\"?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            dialog = MessageBox.Show("Bạn có muốn xóa món ăn \"" + name + "\"?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialog == DialogResult.Yes)
             {
                 var dishes = new API.Dishes();
@@ -59,7 +59,7 @@ namespace Winforms.GUI.Manager.Dish
         private void btn_Update_Click(object sender, EventArgs e)
         {
             DialogResult dialog;
-            dialog = MessageBox.Show("Bạn muốn cập nhật thông tin món ăn?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            dialog = MessageBox.Show("Bạn có muốn cập nhật thông tin món ăn?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialog == DialogResult.Yes)
             {
                 var dishes = new API.Dishes();

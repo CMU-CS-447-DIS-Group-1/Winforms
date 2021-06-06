@@ -1,7 +1,7 @@
 ﻿
 namespace Winforms.GUI.Manager.Dish
 {
-    partial class frm_View
+    partial class frm_Create
     {
         /// <summary>
         /// Required designer variable.
@@ -36,10 +36,10 @@ namespace Winforms.GUI.Manager.Dish
             this.txt_Price = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_Description = new System.Windows.Forms.RichTextBox();
-            this.btn_Delete = new FontAwesome.Sharp.IconButton();
             this.lbl_ID = new System.Windows.Forms.Label();
-            this.btn_Update = new FontAwesome.Sharp.IconButton();
+            this.btn_Create = new FontAwesome.Sharp.IconButton();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.txt_ID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Price)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +48,7 @@ namespace Winforms.GUI.Manager.Dish
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(98, 65);
+            this.label1.Location = new System.Drawing.Point(98, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 25);
             this.label1.TabIndex = 0;
@@ -57,7 +57,7 @@ namespace Winforms.GUI.Manager.Dish
             // txt_Name
             // 
             this.txt_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Name.Location = new System.Drawing.Point(185, 65);
+            this.txt_Name.Location = new System.Drawing.Point(185, 64);
             this.txt_Name.Name = "txt_Name";
             this.txt_Name.Size = new System.Drawing.Size(303, 30);
             this.txt_Name.TabIndex = 1;
@@ -67,7 +67,7 @@ namespace Winforms.GUI.Manager.Dish
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(98, 116);
+            this.label2.Location = new System.Drawing.Point(98, 117);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 25);
             this.label2.TabIndex = 2;
@@ -76,7 +76,7 @@ namespace Winforms.GUI.Manager.Dish
             // txt_Price
             // 
             this.txt_Price.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Price.Location = new System.Drawing.Point(185, 114);
+            this.txt_Price.Location = new System.Drawing.Point(185, 115);
             this.txt_Price.Name = "txt_Price";
             this.txt_Price.Size = new System.Drawing.Size(303, 30);
             this.txt_Price.TabIndex = 2;
@@ -104,22 +104,6 @@ namespace Winforms.GUI.Manager.Dish
             this.txt_Description.TabIndex = 3;
             this.txt_Description.Text = "";
             // 
-            // btn_Delete
-            // 
-            this.btn_Delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_Delete.AutoSize = true;
-            this.btn_Delete.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.btn_Delete.IconColor = System.Drawing.Color.Black;
-            this.btn_Delete.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_Delete.IconSize = 24;
-            this.btn_Delete.Location = new System.Drawing.Point(103, 386);
-            this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(58, 51);
-            this.btn_Delete.TabIndex = 5;
-            this.toolTip1.SetToolTip(this.btn_Delete, "Xóa món ăn");
-            this.btn_Delete.UseVisualStyleBackColor = true;
-            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
-            // 
             // lbl_ID
             // 
             this.lbl_ID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -127,50 +111,59 @@ namespace Winforms.GUI.Manager.Dish
             this.lbl_ID.AutoSize = true;
             this.lbl_ID.BackColor = System.Drawing.Color.Transparent;
             this.lbl_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ID.Location = new System.Drawing.Point(180, 9);
+            this.lbl_ID.Location = new System.Drawing.Point(98, 13);
             this.lbl_ID.Name = "lbl_ID";
             this.lbl_ID.Size = new System.Drawing.Size(52, 29);
             this.lbl_ID.TabIndex = 10;
             this.lbl_ID.Text = "ID: ";
             // 
-            // btn_Update
+            // btn_Create
             // 
-            this.btn_Update.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Update.AutoSize = true;
-            this.btn_Update.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Update.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.btn_Update.IconColor = System.Drawing.Color.Black;
-            this.btn_Update.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_Update.IconSize = 32;
-            this.btn_Update.Location = new System.Drawing.Point(354, 386);
-            this.btn_Update.Name = "btn_Update";
-            this.btn_Update.Size = new System.Drawing.Size(134, 52);
-            this.btn_Update.TabIndex = 4;
-            this.btn_Update.Text = "Cập nhật";
-            this.btn_Update.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btn_Update.UseVisualStyleBackColor = true;
-            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
+            this.btn_Create.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Create.AutoSize = true;
+            this.btn_Create.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Create.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            this.btn_Create.IconColor = System.Drawing.Color.Black;
+            this.btn_Create.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_Create.IconSize = 32;
+            this.btn_Create.Location = new System.Drawing.Point(340, 386);
+            this.btn_Create.Name = "btn_Create";
+            this.btn_Create.Size = new System.Drawing.Size(148, 52);
+            this.btn_Create.TabIndex = 4;
+            this.btn_Create.Text = "Thêm món";
+            this.btn_Create.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_Create.UseVisualStyleBackColor = true;
+            this.btn_Create.Click += new System.EventHandler(this.btn_Create_Click);
             // 
-            // frm_View
+            // txt_ID
+            // 
+            this.txt_ID.Enabled = false;
+            this.txt_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_ID.Location = new System.Drawing.Point(185, 12);
+            this.txt_ID.Name = "txt_ID";
+            this.txt_ID.ReadOnly = true;
+            this.txt_ID.Size = new System.Drawing.Size(303, 30);
+            this.txt_ID.TabIndex = 13;
+            // 
+            // frm_Create
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Winforms.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btn_Update);
+            this.Controls.Add(this.txt_ID);
+            this.Controls.Add(this.btn_Create);
             this.Controls.Add(this.lbl_ID);
-            this.Controls.Add(this.btn_Delete);
             this.Controls.Add(this.txt_Description);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txt_Price);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txt_Name);
             this.Controls.Add(this.label1);
-            this.Name = "frm_View";
+            this.Name = "frm_Create";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Món ăn: ";
-            this.Load += new System.EventHandler(this.frm_View_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_Price)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -185,9 +178,9 @@ namespace Winforms.GUI.Manager.Dish
         private System.Windows.Forms.NumericUpDown txt_Price;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox txt_Description;
-        private FontAwesome.Sharp.IconButton btn_Delete;
         private System.Windows.Forms.Label lbl_ID;
-        private FontAwesome.Sharp.IconButton btn_Update;
+        private FontAwesome.Sharp.IconButton btn_Create;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.TextBox txt_ID;
     }
 }

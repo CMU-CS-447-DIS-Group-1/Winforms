@@ -31,8 +31,8 @@ namespace Winforms.GUI.Manager.Dish
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.ico_Create = new FontAwesome.Sharp.IconButton();
             this.btn_Search = new FontAwesome.Sharp.IconButton();
+            this.btn_Create = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,6 +51,7 @@ namespace Winforms.GUI.Manager.Dish
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -67,34 +68,37 @@ namespace Winforms.GUI.Manager.Dish
             this.textBox1.Size = new System.Drawing.Size(123, 30);
             this.textBox1.TabIndex = 1;
             // 
-            // ico_Create
-            // 
-            this.ico_Create.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ico_Create.IconChar = FontAwesome.Sharp.IconChar.Pen;
-            this.ico_Create.IconColor = System.Drawing.Color.Black;
-            this.ico_Create.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ico_Create.IconSize = 20;
-            this.ico_Create.Location = new System.Drawing.Point(12, 12);
-            this.ico_Create.Name = "ico_Create";
-            this.ico_Create.Size = new System.Drawing.Size(75, 38);
-            this.ico_Create.TabIndex = 4;
-            this.ico_Create.Text = "Tạo";
-            this.ico_Create.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ico_Create.UseVisualStyleBackColor = true;
-            // 
             // btn_Search
             // 
+            this.btn_Search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Search.AutoSize = true;
             this.btn_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Search.IconChar = FontAwesome.Sharp.IconChar.Search;
             this.btn_Search.IconColor = System.Drawing.Color.Black;
             this.btn_Search.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_Search.IconSize = 24;
+            this.btn_Search.IconSize = 20;
             this.btn_Search.Location = new System.Drawing.Point(749, 14);
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(38, 35);
             this.btn_Search.TabIndex = 5;
             this.btn_Search.UseVisualStyleBackColor = true;
+            // 
+            // btn_Create
+            // 
+            this.btn_Create.AutoSize = true;
+            this.btn_Create.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Create.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            this.btn_Create.IconColor = System.Drawing.Color.Black;
+            this.btn_Create.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_Create.IconSize = 20;
+            this.btn_Create.Location = new System.Drawing.Point(12, 12);
+            this.btn_Create.Name = "btn_Create";
+            this.btn_Create.Size = new System.Drawing.Size(136, 38);
+            this.btn_Create.TabIndex = 4;
+            this.btn_Create.Text = "Thêm món";
+            this.btn_Create.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Create.UseVisualStyleBackColor = true;
+            this.btn_Create.Click += new System.EventHandler(this.btn_Create_Click);
             // 
             // frm_Index
             // 
@@ -102,7 +106,7 @@ namespace Winforms.GUI.Manager.Dish
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btn_Search);
-            this.Controls.Add(this.ico_Create);
+            this.Controls.Add(this.btn_Create);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "frm_Index";
@@ -118,7 +122,7 @@ namespace Winforms.GUI.Manager.Dish
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textBox1;
-        private FontAwesome.Sharp.IconButton ico_Create;
+        private FontAwesome.Sharp.IconButton btn_Create;
         private FontAwesome.Sharp.IconButton btn_Search;
     }
 }

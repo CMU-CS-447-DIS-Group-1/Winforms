@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FontAwesome.Sharp;
 
 namespace Winforms.GUI.Manager.Dish
 {
@@ -43,6 +44,13 @@ namespace Winforms.GUI.Manager.Dish
             double price = double.Parse(dataGridView1.CurrentRow.Cells["price"].Value.ToString());
             string description = dataGridView1.CurrentRow.Cells["description"].Value.ToString();
             frm_View frm = new frm_View(id, name, price, description);
+            frm.ShowDialog();
+            LoadDL();
+        }
+
+        private void btn_Create_Click(object sender, EventArgs e)
+        {
+            frm_Create frm = new frm_Create();
             frm.ShowDialog();
             LoadDL();
         }
