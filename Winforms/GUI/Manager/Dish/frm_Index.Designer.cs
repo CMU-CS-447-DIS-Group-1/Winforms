@@ -30,7 +30,7 @@ namespace Winforms.GUI.Manager.Dish
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_Keyword = new System.Windows.Forms.TextBox();
             this.btn_Search = new FontAwesome.Sharp.IconButton();
             this.btn_Create = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -59,14 +59,14 @@ namespace Winforms.GUI.Manager.Dish
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseDoubleClick);
             // 
-            // textBox1
+            // txt_Keyword
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(620, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(123, 30);
-            this.textBox1.TabIndex = 1;
+            this.txt_Keyword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_Keyword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Keyword.Location = new System.Drawing.Point(620, 16);
+            this.txt_Keyword.Name = "txt_Keyword";
+            this.txt_Keyword.Size = new System.Drawing.Size(123, 30);
+            this.txt_Keyword.TabIndex = 1;
             // 
             // btn_Search
             // 
@@ -82,6 +82,7 @@ namespace Winforms.GUI.Manager.Dish
             this.btn_Search.Size = new System.Drawing.Size(38, 35);
             this.btn_Search.TabIndex = 5;
             this.btn_Search.UseVisualStyleBackColor = true;
+            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
             // 
             // btn_Create
             // 
@@ -107,7 +108,7 @@ namespace Winforms.GUI.Manager.Dish
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btn_Search);
             this.Controls.Add(this.btn_Create);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_Keyword);
             this.Controls.Add(this.dataGridView1);
             this.Name = "frm_Index";
             this.Text = "Quản lí món ăn";
@@ -121,7 +122,7 @@ namespace Winforms.GUI.Manager.Dish
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_Keyword;
         private FontAwesome.Sharp.IconButton btn_Create;
         private FontAwesome.Sharp.IconButton btn_Search;
     }

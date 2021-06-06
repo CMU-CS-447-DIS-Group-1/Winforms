@@ -29,6 +29,11 @@ namespace Winforms.GUI.Manager.Dish
         private void LoadDL()
         {
             dataGridView1.DataSource = dishes.index();
+            LoadCols();
+        }
+
+        private void LoadCols()
+        {
             dataGridView1.Columns[0].HeaderText = "ID";
             dataGridView1.Columns[1].HeaderText = "Tên món";
             dataGridView1.Columns[2].HeaderText = "Giá";
@@ -53,6 +58,20 @@ namespace Winforms.GUI.Manager.Dish
             frm_Create frm = new frm_Create();
             frm.ShowDialog();
             LoadDL();
+        }
+
+        private void btn_Search_Click(object sender, EventArgs e)
+        {
+            dynamic result = dishes.show(txt_Keyword.Text);
+            if (result != null && result.code == 1)
+            {
+                dataGridView1.DataSource = result.data;
+                LoadCols();
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy món ăn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

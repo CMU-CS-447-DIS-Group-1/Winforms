@@ -25,7 +25,7 @@ namespace Winforms.GUI.Manager
             dialog = MessageBox.Show("Bạn muốn thoát?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialog == DialogResult.Yes)
             {
-                Environment.Exit(1);
+                Application.ExitThread();
             } else
             {
                 e.Cancel = true;
