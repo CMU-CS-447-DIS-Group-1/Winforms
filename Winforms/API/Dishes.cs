@@ -31,7 +31,8 @@ namespace Winforms.API
             return request.Post(url, data);
         }
 
-        public dynamic show(int id)
+        // id = name
+        public dynamic show(string id)
         {
             return request.Get(url + "/" + id);
         }

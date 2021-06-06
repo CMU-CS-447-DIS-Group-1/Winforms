@@ -71,11 +71,19 @@
     <Compile Include="API\Connect.cs" />
     <Compile Include="API\Dishes.cs" />
     <Compile Include="API\Auth.cs" />
+    <Compile Include="API\LImage.cs" />
+    <Compile Include="API\Table.cs" />
     <Compile Include="GUI\Cashier\frm_Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Cashier\frm_Main.Designer.cs">
       <DependentUpon>frm_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Cashier\frm_SelectDishes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Cashier\frm_SelectDishes.Designer.cs">
+      <DependentUpon>frm_SelectDishes.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Cashier\frm_SelectTable.cs">
       <SubType>Form</SubType>
@@ -88,6 +96,12 @@
     </Compile>
     <Compile Include="GUI\frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Manager\Dish\frm_Create.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\Dish\frm_Create.Designer.cs">
+      <DependentUpon>frm_Create.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Manager\Dish\frm_Index.cs">
       <SubType>Form</SubType>
@@ -113,8 +127,17 @@
     <EmbeddedResource Include="GUI\Cashier\frm_Main.resx">
       <DependentUpon>frm_Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Cashier\frm_SelectDishes.resx">
+      <DependentUpon>frm_SelectDishes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Cashier\frm_SelectTable.resx">
+      <DependentUpon>frm_SelectTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frm_Login.resx">
       <DependentUpon>frm_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\Dish\frm_Create.resx">
+      <DependentUpon>frm_Create.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\Dish\frm_Index.resx">
       <DependentUpon>frm_Index.cs</DependentUpon>
@@ -155,6 +178,8 @@
   <ItemGroup>
     <Content Include="GUI\Cashier\.gitignore" />
     <Content Include="GUI\Manager\.gitignore" />
+    <None Include="Resources\table_1.png" />
+    <None Include="Resources\table_0.png" />
     <None Include="Resources\background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
