@@ -71,6 +71,7 @@
     <Compile Include="API\Connect.cs" />
     <Compile Include="API\Dishes.cs" />
     <Compile Include="API\Auth.cs" />
+    <Compile Include="API\Invoice.cs" />
     <Compile Include="API\LImage.cs" />
     <Compile Include="API\Table.cs" />
     <Compile Include="GUI\Cashier\frm_Main.cs">
@@ -79,11 +80,23 @@
     <Compile Include="GUI\Cashier\frm_Main.Designer.cs">
       <DependentUpon>frm_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Cashier\frm_ViewInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Cashier\frm_ViewInvoice.Designer.cs">
+      <DependentUpon>frm_ViewInvoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Cashier\frm_SelectDishes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Cashier\frm_SelectDishes.Designer.cs">
       <DependentUpon>frm_SelectDishes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Cashier\frm_SelectInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Cashier\frm_SelectInvoice.Designer.cs">
+      <DependentUpon>frm_SelectInvoice.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Cashier\frm_SelectTable.cs">
       <SubType>Form</SubType>
@@ -127,8 +140,14 @@
     <EmbeddedResource Include="GUI\Cashier\frm_Main.resx">
       <DependentUpon>frm_Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Cashier\frm_ViewInvoice.resx">
+      <DependentUpon>frm_ViewInvoice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Cashier\frm_SelectDishes.resx">
       <DependentUpon>frm_SelectDishes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Cashier\frm_SelectInvoice.resx">
+      <DependentUpon>frm_SelectInvoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Cashier\frm_SelectTable.resx">
       <DependentUpon>frm_SelectTable.cs</DependentUpon>

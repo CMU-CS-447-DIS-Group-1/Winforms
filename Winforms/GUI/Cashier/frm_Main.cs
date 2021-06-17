@@ -61,5 +61,16 @@ namespace Winforms.GUI.Cashier
             }
             else Application.OpenForms["frm_SelectTable"].Activate();
         }
+
+        private void hóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["frm_SelectInvoice"] == null)
+            {
+                frm_SelectInvoice frm = new frm_SelectInvoice();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            else Application.OpenForms["frm_SelectInvoice"].Activate();
+        }
     }
 }

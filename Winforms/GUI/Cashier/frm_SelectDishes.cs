@@ -58,8 +58,8 @@ namespace Winforms.GUI.Cashier
             int id = int.Parse(dataGridView1.CurrentRow.Cells["id"].Value.ToString());
             string name = dataGridView1.CurrentRow.Cells["name"].Value.ToString();
             double price = double.Parse(dataGridView1.CurrentRow.Cells["price"].Value.ToString());
-            int amount = 1;
-            double cost = price * amount;
+            int quantity = 1;
+            double cost = price * quantity;
             // Find existed dish
             String searchValue = id.ToString();
             int rowIndex = -1;
@@ -74,13 +74,13 @@ namespace Winforms.GUI.Cashier
             // end
             if (rowIndex == -1)
             {
-                dataGridView_Order.Rows.Add(id, name, price, amount, cost);
+                dataGridView_Order.Rows.Add(id, name, price, quantity, cost);
             } else
             {
                 var row = dataGridView_Order.Rows[rowIndex];
-                int newAmount = int.Parse(row.Cells["quantity"].Value.ToString()) + 1;
-                double newCost = double.Parse(row.Cells["price"].Value.ToString()) * newAmount;
-                dataGridView_Order.Rows[rowIndex].Cells["amount"].Value = newAmount;
+                int newQuantity = int.Parse(row.Cells["quantity"].Value.ToString()) + 1;
+                double newCost = double.Parse(row.Cells["price"].Value.ToString()) * newQuantity;
+                dataGridView_Order.Rows[rowIndex].Cells["quantity"].Value = newQuantity;
                 dataGridView_Order.Rows[rowIndex].Cells["cost"].Value = newCost;
             }
             CalTotal();
@@ -89,9 +89,9 @@ namespace Winforms.GUI.Cashier
         private void btn_Add_Click(object sender, EventArgs e)
         {
             var row = dataGridView_Order.CurrentRow;
-            int newAmount = int.Parse(row.Cells["quantity"].Value.ToString()) + 1;
-            double newCost = double.Parse(row.Cells["price"].Value.ToString()) * newAmount;
-            row.Cells["amount"].Value = newAmount;
+            int newQuantity = int.Parse(row.Cells["quantity"].Value.ToString()) + 1;
+            double newCost = double.Parse(row.Cells["price"].Value.ToString()) * newQuantity;
+            row.Cells["quantity"].Value = newQuantity;
             row.Cells["cost"].Value = newCost;
             CalTotal();
         }
@@ -99,9 +99,9 @@ namespace Winforms.GUI.Cashier
         private void btn_Sub_Click(object sender, EventArgs e)
         {
             var row = dataGridView_Order.CurrentRow;
-            int newAmount = int.Parse(row.Cells["quantity"].Value.ToString()) - 1;
-            double newCost = double.Parse(row.Cells["price"].Value.ToString()) * newAmount;
-            row.Cells["amount"].Value = newAmount;
+            int newQuantity = int.Parse(row.Cells["quantity"].Value.ToString()) - 1;
+            double newCost = double.Parse(row.Cells["price"].Value.ToString()) * newQuantity;
+            row.Cells["quantity"].Value = newQuantity;
             row.Cells["cost"].Value = newCost;
             CalTotal();
         }

@@ -12,9 +12,9 @@ namespace Winforms.API
     class Connect
     {
         RestClient client;
-        //public string baseurl = "https://res.khodata.xyz/api";
-        public string baseurl = "http://restaurant-api.test/api";
-        private bool debug = true;
+        public string baseurl = "https://res.khodata.xyz/api";
+        // public string baseurl = "http://restaurant-api.test/api";
+        private bool debug = false;
 
         public Connect()
         {
