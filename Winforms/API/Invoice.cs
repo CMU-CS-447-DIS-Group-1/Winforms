@@ -18,10 +18,15 @@ namespace Winforms.API
 
         public dynamic index()
         {
-            return request.Get(url);
+            return request.Get(url).data;
         }
 
         public dynamic show(string id)
+        {
+            return request.Get(request.baseurl + "/select/invoices/" + id).data;
+        }
+
+        public dynamic view(string id)
         {
             return request.Get(url + '/' + id).data;
         }

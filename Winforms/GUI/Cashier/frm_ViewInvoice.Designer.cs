@@ -54,6 +54,7 @@ namespace Winforms.GUI.Cashier
             this.dataGridView_Order.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView_Order.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_Order.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView_Order.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Order.Location = new System.Drawing.Point(12, 51);
             this.dataGridView_Order.MultiSelect = false;
@@ -92,8 +93,9 @@ namespace Winforms.GUI.Cashier
             // lbl_TableID
             // 
             this.lbl_TableID.AutoSize = true;
+            this.lbl_TableID.BackColor = System.Drawing.Color.Transparent;
             this.lbl_TableID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TableID.Location = new System.Drawing.Point(12, 9);
+            this.lbl_TableID.Location = new System.Drawing.Point(123, 9);
             this.lbl_TableID.Name = "lbl_TableID";
             this.lbl_TableID.Size = new System.Drawing.Size(92, 25);
             this.lbl_TableID.TabIndex = 6;
@@ -121,6 +123,8 @@ namespace Winforms.GUI.Cashier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Winforms.Properties.Resources.background;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(890, 450);
             this.Controls.Add(this.btn_Print);
             this.Controls.Add(this.lbl_TableID);
@@ -129,7 +133,7 @@ namespace Winforms.GUI.Cashier
             this.Controls.Add(this.dataGridView_Order);
             this.Name = "frm_ViewInvoice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Chọn món";
+            this.Text = "Chi tiết hóa đơn";
             this.Load += new System.EventHandler(this.frm_SelectDishes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Order)).EndInit();
             this.ResumeLayout(false);

@@ -32,9 +32,9 @@ namespace Winforms.GUI.Cashier
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.chọnBànToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.hóaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel_userName = new System.Windows.Forms.ToolStripStatusLabel();
-            this.hóaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -45,8 +45,8 @@ namespace Winforms.GUI.Cashier
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.chọnBànToolStripMenuItem,
-            this.đăngXuấtToolStripMenuItem1,
-            this.hóaĐơnToolStripMenuItem});
+            this.hóaĐơnToolStripMenuItem,
+            this.đăngXuấtToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -67,6 +67,13 @@ namespace Winforms.GUI.Cashier
             this.đăngXuấtToolStripMenuItem1.Text = "Đăng xuất";
             this.đăngXuấtToolStripMenuItem1.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
+            // hóaĐơnToolStripMenuItem
+            // 
+            this.hóaĐơnToolStripMenuItem.Name = "hóaĐơnToolStripMenuItem";
+            this.hóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
+            this.hóaĐơnToolStripMenuItem.Text = "Hóa đơn";
+            this.hóaĐơnToolStripMenuItem.Click += new System.EventHandler(this.hóaĐơnToolStripMenuItem_Click);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -83,13 +90,6 @@ namespace Winforms.GUI.Cashier
             this.toolStripStatusLabel_userName.Name = "toolStripStatusLabel_userName";
             this.toolStripStatusLabel_userName.Size = new System.Drawing.Size(106, 20);
             this.toolStripStatusLabel_userName.Text = "Tên nhân viên: ";
-            // 
-            // hóaĐơnToolStripMenuItem
-            // 
-            this.hóaĐơnToolStripMenuItem.Name = "hóaĐơnToolStripMenuItem";
-            this.hóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
-            this.hóaĐơnToolStripMenuItem.Text = "Hóa đơn";
-            this.hóaĐơnToolStripMenuItem.Click += new System.EventHandler(this.hóaĐơnToolStripMenuItem_Click);
             // 
             // frm_Main
             // 

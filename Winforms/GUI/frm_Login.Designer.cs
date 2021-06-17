@@ -109,6 +109,7 @@ namespace Winforms.GUI
             // 
             // frm_Login
             // 
+            this.AcceptButton = this.btn_Login;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Winforms.Properties.Resources.background;

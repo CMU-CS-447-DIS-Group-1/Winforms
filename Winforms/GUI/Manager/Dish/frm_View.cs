@@ -46,12 +46,12 @@ namespace Winforms.GUI.Manager.Dish
                 bool result = dishes.destroy(id);
                 if (result == true)
                 {
-                    MessageBox.Show("Xóa sản phẩm thành công!");
+                    MessageBox.Show("Xóa sản phẩm thành công!", "Thông báo");
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Xóa sản phẩm thất bại!");
+                    MessageBox.Show("Xóa sản phẩm thất bại!", "Thông báo");
                 }
             }
         }
@@ -66,11 +66,11 @@ namespace Winforms.GUI.Manager.Dish
                 dynamic result = dishes.update(id, txt_Name.Text, double.Parse(txt_Price.Text), txt_Description.Text);
                 if (result != null && result.code == 1)
                 {
-                    MessageBox.Show("Cập nhật thông tin món ăn thành công!");
+                    MessageBox.Show("Cập nhật thông tin món ăn thành công!", "Thông báo");
                 }
                 else
                 {
-                    MessageBox.Show("Cập nhật thông tin món ăn thất bại!");
+                    MessageBox.Show("Cập nhật thông tin món ăn thất bại!", "Thông báo");
                 }
             }
         }

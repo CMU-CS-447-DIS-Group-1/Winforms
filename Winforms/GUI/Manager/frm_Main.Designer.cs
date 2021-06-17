@@ -34,6 +34,7 @@ namespace Winforms.GUI.Manager
             this.đăngXuấtToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel_userName = new System.Windows.Forms.ToolStripStatusLabel();
+            this.quảnLíHoáĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -44,6 +45,7 @@ namespace Winforms.GUI.Manager
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dishManagementToolStripMenuItem,
+            this.quảnLíHoáĐơnToolStripMenuItem,
             this.đăngXuấtToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -54,8 +56,8 @@ namespace Winforms.GUI.Manager
             // dishManagementToolStripMenuItem
             // 
             this.dishManagementToolStripMenuItem.Name = "dishManagementToolStripMenuItem";
-            this.dishManagementToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
-            this.dishManagementToolStripMenuItem.Text = "Quản lý món ăn";
+            this.dishManagementToolStripMenuItem.Size = new System.Drawing.Size(124, 24);
+            this.dishManagementToolStripMenuItem.Text = "Quản lí món ăn";
             this.dishManagementToolStripMenuItem.Click += new System.EventHandler(this.dishManagementToolStripMenuItem_Click);
             // 
             // đăngXuấtToolStripMenuItem1
@@ -81,6 +83,13 @@ namespace Winforms.GUI.Manager
             this.toolStripStatusLabel_userName.Name = "toolStripStatusLabel_userName";
             this.toolStripStatusLabel_userName.Size = new System.Drawing.Size(88, 20);
             this.toolStripStatusLabel_userName.Text = "Tên quản lí: ";
+            // 
+            // quảnLíHoáĐơnToolStripMenuItem
+            // 
+            this.quảnLíHoáĐơnToolStripMenuItem.Name = "quảnLíHoáĐơnToolStripMenuItem";
+            this.quảnLíHoáĐơnToolStripMenuItem.Size = new System.Drawing.Size(129, 24);
+            this.quảnLíHoáĐơnToolStripMenuItem.Text = "Quản lí hoá đơn";
+            this.quảnLíHoáĐơnToolStripMenuItem.Click += new System.EventHandler(this.quảnLíHoáĐơnToolStripMenuItem_Click);
             // 
             // frm_Main
             // 
@@ -114,5 +123,6 @@ namespace Winforms.GUI.Manager
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_userName;
+        private System.Windows.Forms.ToolStripMenuItem quảnLíHoáĐơnToolStripMenuItem;
     }
 }

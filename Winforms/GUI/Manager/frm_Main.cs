@@ -40,7 +40,7 @@ namespace Winforms.GUI.Manager
                 frm.MdiParent = this;
                 frm.Show();
             }
-            else Application.OpenForms["frm_frm_Index"].Activate();
+            else Application.OpenForms["Dish.frm_Index"].Activate();
             //
         }
 
@@ -60,6 +60,17 @@ namespace Winforms.GUI.Manager
             {
                 this.Close();
             }
+        }
+
+        private void quảnLíHoáĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["Invoice.frm_Index"] == null)
+            {
+                Invoice.frm_Index frm = new Invoice.frm_Index();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            else Application.OpenForms["Invoice.frm_Index"].Activate();
         }
     }
 }

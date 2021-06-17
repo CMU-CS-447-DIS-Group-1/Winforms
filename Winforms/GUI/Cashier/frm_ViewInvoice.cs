@@ -29,7 +29,7 @@ namespace Winforms.GUI.Cashier
 
         private void LoadDL()
         {
-            dataGridView_Order.DataSource = invoice.show(this.tableID.ToString());
+            dataGridView_Order.DataSource = invoice.view(this.tableID.ToString());
             LoadColumns();
             CalTotal();
         }
@@ -76,7 +76,7 @@ namespace Winforms.GUI.Cashier
                 dynamic result = invoice.print(this.tableID.ToString());
                 if (result != null && result.status == 1)
                 {
-                    MessageBox.Show("In thành công!");
+                    MessageBox.Show("In thành công!", "Thông báo");
                     this.Close();
                 }
             }

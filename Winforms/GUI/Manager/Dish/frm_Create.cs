@@ -17,6 +17,7 @@ namespace Winforms.GUI.Manager.Dish
         {
             InitializeComponent();
             txt_ID.Text = "Tự động tạo";
+            txt_Price.Maximum = Decimal.MaxValue;
         }
 
         private void btn_Create_Click(object sender, EventArgs e)
@@ -29,11 +30,12 @@ namespace Winforms.GUI.Manager.Dish
                 dynamic result = dishes.store(txt_Name.Text, double.Parse(txt_Price.Text), txt_Description.Text);
                 if (result != null && result.code == 1)
                 {
-                    MessageBox.Show("Thêm món ăn thành công!");
+                    MessageBox.Show("Thêm món ăn thành công!", "Thông báo");
+                    this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Thêm món ăn thất bại!");
+                    MessageBox.Show("Thêm món ăn thất bại!", "Thông báo");
                 }
             }
         }
