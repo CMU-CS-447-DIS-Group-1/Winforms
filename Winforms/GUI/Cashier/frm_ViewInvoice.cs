@@ -30,7 +30,10 @@ namespace Winforms.GUI.Cashier
         private void LoadDL()
         {
             dataGridView_Order.DataSource = invoice.view(this.tableID.ToString());
-            LoadColumns();
+            if (dataGridView_Order.Rows.Count > 0)
+            {
+                LoadColumns();
+            }
             CalTotal();
         }
 
@@ -50,21 +53,6 @@ namespace Winforms.GUI.Cashier
                 total += double.Parse(row.Cells["cost"].Value.ToString());
             }
             lbl_Total.Text = total.ToString();
-        }
-
-        private void btn_Order_Click(object sender, EventArgs e)
-        {
-            API.Table table = new API.Table();
-            foreach (DataGridViewRow row in dataGridView_Order.Rows)
-            {
-                int dishID = int.Parse(row.Cells["id"].Value.ToString());
-                int quantity = int.Parse(row.Cells["quantity"].Value.ToString());
-                double price = int.Parse(row.Cells["price"].Value.ToString());
-                table.order(tableID, dishID, quantity, price);
-            }
-            MessageBox.Show("Đặt món thành công!", "Thông báo");
-            dataGridView_Order.Rows.Clear();
-            CalTotal();
         }
 
         private void btn_Print_Click(object sender, EventArgs e)

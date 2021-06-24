@@ -30,7 +30,10 @@ namespace Winforms.GUI.Cashier
         private void LoadDL()
         {
             dataGridView1.DataSource = dishes.index();
-            LoadColumns();
+            if (dataGridView1.Rows.Count > 0)
+            {
+                LoadColumns();
+            }
         }
 
         private void LoadColumns()
@@ -121,17 +124,23 @@ namespace Winforms.GUI.Cashier
 
         private void btn_Order_Click(object sender, EventArgs e)
         {
-            API.Table table = new API.Table();
-            foreach (DataGridViewRow row in dataGridView_Order.Rows)
+            if (dataGridView_Order.Rows.Count == 0)
             {
-                int dishID = int.Parse(row.Cells["id"].Value.ToString());
-                int quantity = int.Parse(row.Cells["quantity"].Value.ToString());
-                double price = int.Parse(row.Cells["price"].Value.ToString());
-                table.order(tableID, dishID, quantity, price);
+                MessageBox.Show("Vui lòng chọn ít nhất một món!", "Thông báo");
+            } else
+            {
+                API.Table table = new API.Table();
+                foreach (DataGridViewRow row in dataGridView_Order.Rows)
+                {
+                    int dishID = int.Parse(row.Cells["id"].Value.ToString());
+                    int quantity = int.Parse(row.Cells["quantity"].Value.ToString());
+                    double price = int.Parse(row.Cells["price"].Value.ToString());
+                    table.order(tableID, dishID, quantity, price);
+                }
+                MessageBox.Show("Đặt món thành công!", "Thông báo");
+                dataGridView_Order.Rows.Clear();
+                CalTotal();
             }
-            MessageBox.Show("Đặt món thành công!", "Thông báo");
-            dataGridView_Order.Rows.Clear();
-            CalTotal();
         }
     }
 }

@@ -29,7 +29,10 @@ namespace Winforms.GUI.Manager.Dish
         private void LoadDL()
         {
             dataGridView1.DataSource = dishes.index();
-            LoadCols();
+            if (dataGridView1.Rows.Count > 0)
+            {
+                LoadCols();
+            }
         }
 
         private void LoadCols()

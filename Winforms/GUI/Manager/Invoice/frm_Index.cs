@@ -29,8 +29,11 @@ namespace Winforms.GUI.Manager.Invoice
         private void LoadDL()
         {
             dataGridView1.DataSource = invoices.index();
-            handle();
-            LoadCols();
+            if (dataGridView1.Rows.Count > 0)
+            {
+                handle();
+                LoadCols();
+            }
         }
 
         private void handle()
